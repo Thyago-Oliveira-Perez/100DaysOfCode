@@ -1,7 +1,7 @@
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Stream;
 
 public class day05 {
 
@@ -12,7 +12,7 @@ public class day05 {
         System.out.print("Type yours socks: ");
         String socks = scan.nextLine();
 
-        System.out.println(SockPairs(socks.toUpperCase().trim()));
+        System.out.println(MessageFormat.format("Number of socks: {0}", SockPairs(socks.toUpperCase().trim())));
     }
 
     public static int SockPairs(String socks){
