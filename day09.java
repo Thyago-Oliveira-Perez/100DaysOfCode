@@ -47,7 +47,6 @@ public class day09 {
                             }else{
                                 bucket++;
                             }
-                            continue;
                         }else{
                             x = y-1;
                             waterLevel += bucket;
