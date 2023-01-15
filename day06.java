@@ -21,7 +21,6 @@ public class day06 {
             }
             //it means the number is divisible by one and itself only
             if(possibleMultiplications == 2) break;
-            possibleMultiplications = 1;
             number++;
         }
 
