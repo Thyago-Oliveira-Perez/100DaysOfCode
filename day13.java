@@ -1,6 +1,7 @@
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class day13 {
@@ -20,6 +21,9 @@ public class day13 {
 
         List<Integer> items = new ArrayList<>(Arrays.stream(weights).boxed().toList());
 
+        //order the items
+        Collections.sort(items);
+
         for (int i = 0; i < numberOfBags; i++) {
 
             int bag = 0;
@@ -29,12 +33,9 @@ public class day13 {
 
                 List<Integer> passedItems = new ArrayList<>();
 
-                for (int e = 0; e < items.size(); e++) {
-                    if ((bag + items.get(e)) > 10) {
-                        //REDO se eu faço e++ quando o e vale 2, ele começa a valer 3 e ai quebra o for
-                        e++;
-                    } else {
-                        bag += items.get((e)) ;
+                for (int e = (items.size() - 1); e > -1; e--) {
+                    if ((bag + items.get(e)) <= 10) {
+                        bag += items.get(e);
                         passedItems.add(items.get(e));
                     }
                 }
@@ -49,19 +50,6 @@ public class day13 {
             fullBags++;
         }
 
-        if (fullBags == numberOfBags && items.size() == 0) return true;
-        return false;
+        return (fullBags == numberOfBags && items.size() == 0) ? true : false;
     }
 }
-
-/**
- * 2, 7, 1, 3, 3, 4, 7, 4, 1, 8, 2
- * 2, 8 - bag1
- * 2, 7, 1, 3, 3, 4, 7, 4, 1
- * 3, 7 - bag2
- * 2, 1 ,3, 4, 7, 4, 1
- * 2, 4, 4 - bag3
- * 1 ,3, 7, 1
- * 7, 3 - bag4
- * 1, 1
- */
