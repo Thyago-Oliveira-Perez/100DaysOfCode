@@ -9,7 +9,7 @@ public class day17 {
         System.out.println(MessageFormat.format("{0}", PrisonBreak(new int[]{0, 0, 0, 0})));
     }
 
-    public static Integer PrisonBreak(int[] cells) {
+    public static Integer PrisonBreak (int[] cells) {
 
         if (cells[0] == 0) return 0;
 
@@ -34,7 +34,7 @@ public class day17 {
         return freePrisoners;
     }
 
-    public static int[] LockUnlockCells(int[] cells) {
+    public static int[] LockUnlockCells (int[] cells) {
 
         int[] newCells = new int[cells.length];
 
