@@ -32,6 +32,7 @@ public class day19 {
         String line;
 
         try {
+            //this link use php to short an url
             url = new URL("https://is.gd/create.php?format=simple&url=" + originalUrl);
             conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
