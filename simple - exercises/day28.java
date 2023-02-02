@@ -72,7 +72,6 @@ public class day28 {
                     return word;
                 }
             }
-
         }
 
         return "";
