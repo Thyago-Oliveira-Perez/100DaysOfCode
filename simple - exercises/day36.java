@@ -10,94 +10,73 @@ public class day36 {
 
         final String horizontal = "-";
         final String vertical = "|";
-        final String space = " ";
         char[] numbers = Integer.toString(num).toCharArray();
 
         for (int o = 0 ; o < ((size * 2) + 3) ; o++) {
             if (o == 0 || o == (size + 1) || o == (size * 2) + 2) {
                 for (char number : numbers) {
                     if (number == '1') {
-                        for (int i = 0; i < (size + 2); i++) {
-                            System.out.print(space);
-                        }
-                        System.out.print(space);
-                        System.out.print(space);
+                        CreateSpaces(size, 4);
                     } else if (number == '2') {
                         for (int i = 0; i < size; i++) {
                             System.out.print(horizontal);
                         }
-                        System.out.print(space);
-                        System.out.print(space);
-                        System.out.print(space);
+                        CreateSpaces(size, 1);
                     } else if (number == '3') {
                         for (int i = 0; i < size; i++) {
                             System.out.print(horizontal);
                         }
-                        System.out.print(space);
-                        System.out.print(space);
-                        System.out.print(space);
+                        CreateSpaces(size, 1);
                     } else if (number == '4') {
                         if (o == (size + 1)) {
                             for (int i = 0; i < size; i++) {
                                 System.out.print(horizontal);
                             }
-                            System.out.print(space);
-                            System.out.print(space);
-
+                            CreateSpaces(size, 0);
                         } else {
-                            for (int i = 0; i < size + 1; i++) {
-                                System.out.print(space);
-                            }
-                            System.out.print(space);
-
+                            CreateSpaces(size, 2);
                         }
                     } else if (number == '5') {
-                        System.out.print(space);
+                        CreateSpaces(1, 0);
                         for (int i = 0; i < size; i++) {
                             System.out.print(horizontal);
                         }
-                        System.out.print(space);
-                        System.out.print(space);
+                        CreateSpaces(size, 0);
                     } else if (number == '6') {
-                        System.out.print(space);
+                        CreateSpaces(1, 0);
+
                         for (int i = 0; i < size; i++) {
                             System.out.print(horizontal);
                         }
-                        System.out.print(space);
-                        System.out.print(space);
+                        CreateSpaces(size, -1);
                     } else if (number == '7') {
                         if (o == 0) {
                             for (int i = 0; i < size; i++) {
                                 System.out.print(horizontal);
                             }
-                            System.out.print(space);
+                            CreateSpaces(1, 0);
                         } else {
-                            for (int i = 0; i < size + 1; i++) {
-                                System.out.print(space);
-                            }
+                            CreateSpaces(size, 1);
                         }
                     } else if (number == '8') {
-                        System.out.print(space);
+                        CreateSpaces(1, 0);
                         for (int i = 0; i < size; i++) {
                             System.out.print(horizontal);
                         }
-                        System.out.print(space);
-                        System.out.print(space);
+                        CreateSpaces(size, -1);
                     } else if (number == '9') {
-                        System.out.print(space);
+                        CreateSpaces(1, 0);
                         for (int i = 0; i < size; i++) {
                             System.out.print(horizontal);
                         }
-                        System.out.print(space);
-                        System.out.print(space);
+                        CreateSpaces(size, -1);
                     } else if (number == '0') {
                         if (o != (size + 1)) {
-                            System.out.print(space);
+                            CreateSpaces(1, 0);
                             for (int i = 0; i < size; i++) {
                                 System.out.print(horizontal);
                             }
-                            System.out.print(space);
-                            System.out.print(space);
+                            CreateSpaces(size, -1);
                         }
                     }
                 }
@@ -105,119 +84,95 @@ public class day36 {
             } else {
                 for (char number : numbers) {
                     if (number == '1') {
-                        for (int i = 0; i < ((size + 2) - 1); i++) {
-                            System.out.print(space);
-                        }
+                        CreateSpaces(size, 1);
                         System.out.print(vertical);
                     } else if (number == '2') {
                         if (o < (size + 1)) {
-                            for (int i = 0; i < (size + 2); i++) {
-                                System.out.print(space);
-                            }
+                            CreateSpaces(size, 2);
                             System.out.print(vertical);
                         } else {
-                            for (int i = 0; i < (size - 1); i++) {
-                                System.out.print(space);
-                            }
+                            CreateSpaces(size, -1);
                             System.out.print(vertical);
                         }
                     } else if (number == '3') {
                         if (o < (size + 1)) {
-                            for (int i = 0; i < (size + 2); i++) {
-                                System.out.print(space);
-                            }
+                            CreateSpaces(size, 2);
                             System.out.print(vertical);
-                            System.out.print(space);
+                            CreateSpaces(size, -1);
                         } else {
-                            for (int i = 0; i < (7); i++) {
-                                System.out.print(space);
-                            }
+                            CreateSpaces(size, 5);
                             System.out.print(vertical);
-                            System.out.print(space);
+                            CreateSpaces(size, -1);
                         }
                     } else if (number == '4') {
                         if (o < (size + 1)) {
                             System.out.print(vertical);
-                            for (int i = 0; i < (2); i++) {
-                                System.out.print(space);
-                            }
+                            CreateSpaces(size, 0);
                         } else {
-                            for (int i = 0; i < (3); i++) {
-                                System.out.print(space);
-                            }
+                            CreateSpaces(size, 1);
                         }
                         System.out.print(vertical);
-                        System.out.print(space);
+                        CreateSpaces(size, -1);
                     } else if (number == '5') {
                         if (o < (size + 1)) {
                             System.out.print(vertical);
-                            for (int i = 0; i < (size + 2); i++) {
-                                System.out.print(space);
-                            }
+                            CreateSpaces(size, 2);
                         } else {
-                            for (int i = 0; i < (size + 1); i++) {
-                                System.out.print(space);
-                            }
+                            CreateSpaces(size, 1);
                             System.out.print(vertical);
-                            System.out.print(space);
+                            CreateSpaces(size, -1);
                         }
                     } else if (number == '6') {
                         if (o < (size + 1)) {
                             System.out.print(vertical);
-                            for (int i = 0; i < (size); i++) {
-                                System.out.print(space);
-                            }
+                            CreateSpaces(size, 0);
                         } else {
                             System.out.print(vertical);
-                            for (int i = 0; i < (size); i++) {
-                                System.out.print(space);
-                            }
+                            CreateSpaces(size, 0);
                             System.out.print(vertical);
                         }
                     } else if (number == '7') {
                         if (o < (size + 1)) {
-                            for (int i = 0; i < (size + 2); i++) {
-                                System.out.print(space);
-                            }
+                            CreateSpaces(size, 2);
                             System.out.print(vertical);
                         } else {
-                            for (int i = 0; i < (size + 1); i++) {
-                                System.out.print(space);
-                            }
+                            CreateSpaces(size, 1);
                             System.out.print(vertical);
                         }
                     } else if (number == '8') {
                         System.out.print(vertical);
-                        for (int i = 0; i < (size); i++) {
-                            System.out.print(space);
-                        }
+                        CreateSpaces(size, 0);
                         System.out.print(vertical);
-                        System.out.print(space);
+                        CreateSpaces(1, 0);
                     } else if (number == '9') {
                         if (o < (size + 1)) {
                             System.out.print(vertical);
-                            for (int i = 0; i < (size); i++) {
-                                System.out.print(space);
-                            }
+                            CreateSpaces(size, 0);
                             System.out.print(vertical);
-                            System.out.print(space);
+                            CreateSpaces(0, 1);
                         } else {
-                            for (int i = 0; i < (size + 1); i++) {
-                                System.out.print(space);
-                            }
+                            CreateSpaces(size, 1);
                             System.out.print(vertical);
-                            System.out.print(space);
+                            CreateSpaces(0, 1);
                         }
                     } else if (number == '0') {
                         System.out.print(vertical);
-                        for (int i = 0; i < (size); i++) {
-                            System.out.print(space);
-                        }
+                        CreateSpaces(size, 0);
                         System.out.print(vertical);
                     }
                 }
                 System.out.print("\n");
             }
+        }
+    }
+
+    public static void CreateSpaces (int size, int spaces) {
+        final String space = " ";
+
+        int length = size + spaces;
+
+        for (int i = 0; i < length ; i++) {
+            System.out.print(space);
         }
     }
 }
