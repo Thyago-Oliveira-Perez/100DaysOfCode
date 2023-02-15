@@ -26,16 +26,18 @@ public class day10 {
         final String successMessage = "Number of BST's";
         final String incorrectInputMessage = "Number must be bigger than 1 and smaller than 19.";
 
-        if (input <= 1 || input >= 19) return incorrectInputMessage;
+        if (input <= 1 || input > 19) return incorrectInputMessage;
 
-        int bts = 1;
+        int[] sol = new int[input+1];
 
-        for (int i = 0; i < input; i++) {
-            bts = bts + (2 * Math.getExponent(input + 1) - 1);
+        sol[0] = 1;
+
+        for(int i = 1; i <= input; i++) {
+            for(int j = 0; j < i; j++) {
+                sol[i] += sol[j] * sol[i-j-1];
+            }
         }
 
-        bts = bts / 2;
-
-        return MessageFormat.format("{0}: {1}", successMessage, bts);
+        return MessageFormat.format("{0}: {1}", successMessage, sol[input]);
     }
 }
