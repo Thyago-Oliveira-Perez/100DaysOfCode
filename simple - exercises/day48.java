@@ -16,9 +16,6 @@ public class day48 {
             for (int i = 1 ; i <= ((j * 2) - 1) ; i++) {
                 System.out.print("#");
             }
-            for (int i = 1 ; i <= (height - j) ; i++) {
-                System.out.print(" ");
-            }
             System.out.println();
         }
         System.out.println();
