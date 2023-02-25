@@ -34,24 +34,19 @@ public class day52 {
 
     public static List<char[]> SwitchGravityOn (List<char[]> suspendBlocks) {
 
-        for (int i = 0 ; i < suspendBlocks.size() ; i ++) {
+        for (int j = 0 ; j < suspendBlocks.size() ; j++) {
+            for (int i = 0; i < suspendBlocks.get(0).length ; i++) {
 
-            char[] line = suspendBlocks.get(i);
+                int p = 1;
 
-            for (int j = 0 ; j < line.length ; j++) {
-                if (i+1 < suspendBlocks.size()) {
-                    int lastLine = suspendBlocks.size();
-                    int auxPosition = 1;
-                    if (line[j] == '#' && suspendBlocks.get(lastLine - auxPosition)[j] == '-') {
-                        char aux = line[j];
-                        line[j] = suspendBlocks.get(lastLine - auxPosition)[j];
-                        suspendBlocks.get(lastLine - auxPosition)[j] = aux;
-                        auxPosition++;
-                    }
+                while (suspendBlocks.get(j)[i] != '-' && j+p < suspendBlocks.size()) {
+                    char aux = suspendBlocks.get(j)[i];
+                    suspendBlocks.get(j)[i] = suspendBlocks.get(j+p)[i];
+                    suspendBlocks.get(j+p)[i] = aux;
+                    p++;
                 }
             }
         }
-
 
         return suspendBlocks;
     }
