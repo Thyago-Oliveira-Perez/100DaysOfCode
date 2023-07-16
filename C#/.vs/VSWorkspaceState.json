@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\day-01",
+    "\\day-01\\day-01",
+    "\\day-02",
+    "\\day-02\\day-02"
   ],
-  "SelectedNode": "\\NewFile",
+  "SelectedNode": "\\day-02",
   "PreviewInSolutionExplorer": false
 }
