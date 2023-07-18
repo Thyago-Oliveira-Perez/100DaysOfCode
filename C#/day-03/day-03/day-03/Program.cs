@@ -22,8 +22,8 @@
 
         foreach (string skewer in skewers) 
         {
-            bool vegetable = skewer.Contains("o");
-            bool meat = skewer.Contains("x");
+            bool vegetable = skewer.Contains('o');
+            bool meat = skewer.Contains('x');
 
             if (vegetable && meat || !vegetable && meat) 
             { 
